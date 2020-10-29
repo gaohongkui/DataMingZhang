@@ -144,6 +144,7 @@ def valid():
         plt.legend(loc='best')
         plt.savefig('images/window%d_%d.jpg' % (window, i))
         plt.show()
+        plt.figure()
         real = np.array([0])
         prediction = np.array([0])
 
@@ -189,7 +190,7 @@ if __name__ == '__main__':
         train()
         torch.save(net.state_dict(), saved_model_path)
     else:
-        net.load_state_dict(torch.load(saved_model_path))
+        net.load_state_dict(torch.load(saved_model_path, map_location=torch.device(device)))
         # print(net)
 
     # 验证
