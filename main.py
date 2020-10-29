@@ -142,6 +142,7 @@ def valid():
         plt.plot(real[1:], 'b', label='real')
         plt.title('%d/%d MSELoss= %f' % (i, n_rows, loss))
         plt.legend(loc='best')
+        plt.savefig('images/' + str(i) + '.jpg')
         plt.show()
         real = np.array([0])
         prediction = np.array([0])
@@ -155,6 +156,7 @@ if __name__ == '__main__':
     # 预处理后的数据
     data_norm = data_cleaning()
     print('保留的数据大小', data_norm.shape)
+    print('保留的地下水井index', data_norm.index.values)
     # 共有多少口井被保留
     n_rows = data_norm.shape[0]
 
