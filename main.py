@@ -142,7 +142,7 @@ def valid():
         plt.plot(real[1:], 'b', label='real')
         plt.title('%d/%d MSELoss= %f' % (i, n_rows, loss))
         plt.legend(loc='best')
-        plt.savefig('images/' + str(i) + '.jpg')
+        plt.savefig('images/window%d_%d.jpg' % (window, i))
         plt.show()
         real = np.array([0])
         prediction = np.array([0])
