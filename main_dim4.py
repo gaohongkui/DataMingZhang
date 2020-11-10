@@ -23,7 +23,7 @@ def data_cleaning():
     # 只要每个月地下水位高度数据
     data = data.iloc[:, 6:]
     # 保留至少包含28年数据的井，并对缺失值做线性插值处理
-    data = data.dropna(thresh=12 * 28).interpolate(axis=1)
+    data = data.dropna(thresh=12 * 27).interpolate(axis=1)
 
     # 归一化
     data_max = data.stack().max()
